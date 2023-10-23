@@ -17,7 +17,3 @@
     height: 300px ;
     width: 250px;
 }
-.produit:hover{
-    transition: 0.2s;
-    transform: translateY(100px);
-}
