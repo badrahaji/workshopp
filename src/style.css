@@ -1,0 +1,23 @@
+.produit{
+    display: grid;
+    width: 200px;
+    border: 2px solid red;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: 0.3s;
+}
+.listProduit{
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-evenly;
+}
+.produit img{
+    height: 300px ;
+    width: 250px;
+}
+.produit:hover{
+    transition: 0.2s;
+    transform: translateY(100px);
+}
