@@ -1,23 +1,27 @@
 import phones from "./Phones.js";
 import Produit from "./Produit.js";
-function ListProduit(){
-    return (
-        <div className="listProduit">
-            {phones.map((p)=>(
-                <Produit {...p}/>
-            ))};
-        </div>
-    )
-};
-const btn = document.querySelectorAll('button')
-const prod = document.getElementsByClassName('produit')
-console.log(prod)
-function remove (){
-    return (
-btn.forEach(e=>{
-    document.removeChild(prod)
-})
-    )
+
+function removeProduct(product) {
+    console.log('ttttt', product);
+    var el = document.getElementById('listProduitId');
+    console.log(el);
+    el.removeChild(product);
 }
-export {remove} ;
+
+function ListProduit() {
+    return (
+        <div className="listProduit" id="listProduitId">
+            {phones.map((p, index) => (
+                <Produit
+                    key={index}
+                    {...p}
+                    onRemove={() => {
+                        removeProduct(document.getElementById(p.id));
+                    }}
+                />
+            ))}
+        </div>
+    );
+}
+
 export default ListProduit;
